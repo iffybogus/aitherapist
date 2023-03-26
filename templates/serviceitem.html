@@ -1,0 +1,12 @@
+<div class="border-bottom row" style="margin-bottom: 16px; padding-bottom: 8px;">
+  <div class="col-9">
+    <h4>{{service['product']}}</h4>
+          <div><b>Location: </b>{{service['location']}}</div>
+      {% if 'price' in service %}
+          <div><b>Price: </b>{{service['price']}}</div>
+      {% endif %}
+  </div>
+  <div class="col-3">
+      <button type="button" class="btn btn-outline-primary" style="margin-top: 16px; align">Apply</button>
+  </div>
+</div>

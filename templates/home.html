@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Therapist Bot</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+  <style>
+
+    #banner {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    #buttons {
+      text-align: center;
+    }
+
+    .bodytext {
+      font-family: sans-serif;
+      color: rgb(80,80,80);
+      font-size: 12px;
+    }
+  </style>
+</head>
+  
+<body>
+  
+  <h1 class="text-center mt-4 mb-4">{{company_name}} AI Therapist Bot</h1>
+  <img class="img-fluid" id="banner" src="https://AI-Therapist-Bot.iffybogus.repl.co/static/banner.jpg" height="220">
+  <br><br>
+
+  <div class="container">
+    <h3 class="text-center mt-2 mb-2">About my trusted therapist!</h3>
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  
+  <p>
+    {% for service in services %}
+    
+    {% include 'serviceitem.html' %}
+    
+     {% endfor %}
+  </p> 
+  <div id="buttons">
+    <button class="btn btn-primary btn-lg">Contact Us</button>
+    <p class="bodytext mt-4">Copyright 2023, Technically Yours</p>
+  </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
