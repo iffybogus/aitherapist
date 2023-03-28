@@ -8,8 +8,9 @@ def index():
     clients = load_clients()
     return render_template("home.html", clients=clients, company_name="Technically Yours")
 
-@app.route("/services")
-def list_services():
+@app.route("/clients")
+def list_clients():
+  clients = load_clients()
   return jsonify(clients)
   
 # if we invoke program with python
