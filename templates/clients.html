@@ -1,0 +1,12 @@
+<div class="border-bottom row" style="margin-bottom: 16px; padding-bottom: 8px;">
+  <div class="col-9">
+    <h4>{{client['firstname']}} {{client['lastname']}}</h4>
+          <div><b>Email: </b>{{client['email']}}</div>
+      {% if 'vcode' in client %}
+          <div><b>Code: </b>{{client['vcode']}}</div>
+      {% endif %}
+  </div>
+  <div class="col-3">
+      <a type="button" class="btn btn-outline-primary" href="http://cisco.com" target="_blank" style="margin-top: 16px; align">Apply</a>
+  </div>
+</div>

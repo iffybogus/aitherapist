@@ -1,41 +1,16 @@
 from flask import Flask, render_template, jsonify
+from database import load_clients
 
 app = Flask(__name__)
 
-SERVICES = [
-  {
-    'id': 2,
-    'product': "Sex Therapy",
-    'location': "Enugu",
-    'price': '$75'
-  },
-  {
-    'id': 3,
-    'product': "Speech Therapy",
-    'location': "Dallas",
-    'price': '$175'
-  },
-  {
-    'id': 4,
-    'product': "Drug Therapy",
-    'location': "New York",
-    'price': '$250'
-  },
-  {
-    'id': 5,
-    'product': "Gambling Therapy",
-    'location': "Enugu",
-    'price': '$75'
-  } 
-]
-
 @app.route('/')
 def index():
-    return render_template("home.html", services = SERVICES, company_name="Technically Yours")
+    clients = load_clients()
+    return render_template("home.html", clients=clients, company_name="Technically Yours")
 
 @app.route("/services")
 def list_services():
-  return jsonify(SERVICES)
+  return jsonify(clients)
   
 # if we invoke program with python
 if __name__ == "__main__":
