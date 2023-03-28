@@ -1,2 +1,2 @@
-# aibot
-AI Virtual Therapist Bot
+# aitherapist
+AI Virtual Therapist Bot V2
