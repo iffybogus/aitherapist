@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify
-from database import load_clients
+from database import load_clients, load_client_from_db
 
 app = Flask(__name__)
 
@@ -12,6 +12,11 @@ def index():
 def list_clients():
   clients = load_clients()
   return jsonify(clients)
+
+@app.route("/client/<id>")
+def show_client(id):
+  client = load_client_from_db(id)
+  return jsonify(client)
   
 # if we invoke program with python
 if __name__ == "__main__":

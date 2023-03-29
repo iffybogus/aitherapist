@@ -4,6 +4,21 @@
 import os
 from sqlalchemy import create_engine, text
 
+def load_client_from_db(id):
+  with engine.connect() as conn:
+    values = {'val': id}
+    result = conn.execute(
+      text('SELECT * FROM clients WHERE id = :val'), 
+      values
+    )
+    rows =  result.all()
+      
+    if len(rows) == 0:
+      return None
+    else:
+      print("type", type(rows[0]))
+      return None
+
 def load_clients():
   with engine.connect() as conn:
     result = conn.execute(text("select * from clients"))
@@ -18,5 +33,5 @@ engine = create_engine(db_connection,
     }
   })
 
-print(load_clients())
+#print(load_clients())
 
